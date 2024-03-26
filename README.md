@@ -11,3 +11,9 @@ Konstantinos N. Plataniotis, and Zhangyang Wang
 ## Overview
 As show in figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous work concentrate on object-centric 4D objects. In comparison, our work extends the boundaries to the demanding task of constructing compositional 4D scenes. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
 
+## Code is coming soon!
+
+## Citation
+
+If you find this repository/work helpful in your research, please consider citing the paper and starring the repo ⭐.
+
