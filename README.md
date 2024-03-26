@@ -3,7 +3,7 @@
 Authors: Dejia Xu, Hanwen Liang, Neel P. Bhatt1, Hezhen Hu, Hanxue Liang,
 Konstantinos N. Plataniotis, and Zhangyang Wang
 
-[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results only)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2312.17225)
+[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results only)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 
 ![overview](docs/static/media/task.29476c66b38120ba3c46.jpg)
