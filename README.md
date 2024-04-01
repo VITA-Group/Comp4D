@@ -16,7 +16,7 @@ Konstantinos N. Plataniotis, and Zhangyang Wang
 
 As show in figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous works concentrate on object-centric 4D objects with limited movement. In comparison, our work extends the boundaries to the demanding task of compositional 4D scene generation. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
 
-## Representative Results
+<!-- ## Representative Results
 
 <table class="center">
   <td><video src="https://github.com/VITA-Group/Comp4D/blob/main/assets/butterfly_flower1.mp4" width="170"></video>
@@ -28,7 +28,7 @@ As show in figure above, we introduce **Comp**ositional **4D** Scene Generation.
   <td style="text-align:center;" width="170">"a black swan swims on the pond"</td>
   <td style="text-align:center;" width="170">"a girl is riding a horse fast on grassland"</td>
 
-</table >
+</table > -->
 
 ## Static Assets
 
