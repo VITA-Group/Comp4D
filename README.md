@@ -22,8 +22,10 @@ As show in figure above, we introduce **Comp**ositional **4D** Scene Generation.
   <td><video src="https://github.com/VITA-Group/Comp4D/blob/main/assets/butterfly_flower1.mp4" width="170"></video>
   <td><video src="https://github.com/VITA-Group/Comp4D/blob/main/assets/butterfly_flower2.mp4" width="170"></video>
   <tr>
+  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/1a57edd9-3fd2-4ce9-8313-89aca95b6ec7"><video src=assets/butterfly_flower1.mp4 width="170"></td>
+  <td><a href="https://github.com/AILab-CVC/VideoCrafter/assets/18735168/d671419d-ae49-4889-807e-b841aef60e8a"><video src=assets/butterfly_flower2.mp4 width="170"></td>
   <tr>
-  <td style="text-align:center;" width="170">"a butterfly flies towards the flower"</td>
+  <td style="text-align:center;" width="170">"a black swan swims on the pond"</td>
   <td style="text-align:center;" width="170">"a girl is riding a horse fast on grassland"</td>
 
 </table >
