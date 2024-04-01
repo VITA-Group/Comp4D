@@ -18,6 +18,15 @@ As show in figure above, we introduce **Comp**ositional **4D** Scene Generation.
 
 ## Representative Results
 
+<table class="center">
+  <td><video src="https://github.com/VITA-Group/Comp4D/blob/main/assets/butterfly_flower1.mp4" width="170"></video>
+  <td><video src="https://github.com/VITA-Group/Comp4D/blob/main/assets/butterfly_flower2.mp4" width="170"></video>
+  <tr>
+  <tr>
+  <td style="text-align:center;" width="170">"a butterfly flies towards the flower"</td>
+  <td style="text-align:center;" width="170">"a girl is riding a horse fast on grassland"</td>
+
+</table >
 
 ## Static Assets
 
