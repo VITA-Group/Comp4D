@@ -2,7 +2,7 @@ import subprocess
 import os
 
 src = '../4dfy/output/fourdfy_stage_2_low_vram/'
-dst = './data/8w/'
+dst = './data/'
 os.makedirs(dst, exist_ok=True)
 
 for obj_dir in os.listdir(src):

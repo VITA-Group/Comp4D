@@ -40,8 +40,8 @@ ModelParams = dict(
     name="rose",
     rife=False,
     cloud_path = [
-        './data/8w/a_rock.ply',
-        './data/8w/a_yellow_fish.ply',
+        './data/a_rock.ply',
+        './data/a_yellow_fish.ply',
     ]
 )
 

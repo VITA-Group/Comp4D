@@ -1,4 +1,4 @@
-name: 4DGen
+name: Comp4D
 channels:
   - defaults
 dependencies:

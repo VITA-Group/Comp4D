@@ -1,5 +1,5 @@
 OptimizationParams = dict(
-    prompt='a butterfly flies around the flower',
+    prompt='a butterfly flies towards the flower',
     # first one is static
     obj_prompt = [
         'a flower',
@@ -40,8 +40,8 @@ ModelParams = dict(
     name="rose",
     rife=False,
     cloud_path = [
-        './data/8w/a_flower.ply',
-        './data/8w/a_butterfly.ply',
+        './data/a_flower.ply',
+        './data/a_butterfly.ply',
     ]
 )
 
