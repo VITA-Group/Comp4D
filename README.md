@@ -3,7 +3,7 @@
 Authors: Dejia Xu, Hanwen Liang, Neel P. Bhatt, Hezhen Hu, Hanxue Liang,
 Konstantinos N. Plataniotis, and Zhangyang Wang
 
-[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results only)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
+[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 ## News
 
@@ -14,7 +14,7 @@ Konstantinos N. Plataniotis, and Zhangyang Wang
 
 ![overview](docs/static/media/task.29476c66b38120ba3c46.jpg)
 
-As show in figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous work concentrate on object-centric 4D objects. In comparison, our work extends the boundaries to the demanding task of constructing compositional 4D scenes. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
+As show in figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous works concentrate on object-centric 4D objects with limited movement. In comparison, our work extends the boundaries to the demanding task of compositional 4D scene generation. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
 
 ## Representative Results
 
@@ -36,7 +36,7 @@ pip install ./diff-gaussian-rasterization
 pip install ./simple-knn
 ```
 
-## Example Case Training
+## Example Case
 #### Prompt Case
 "a butterfly flies towards the flower"
 
@@ -45,7 +45,7 @@ pip install ./simple-knn
 python train_comp.py --configs arguments/comp_butterfly_flower_zs.py -e butterflyflower_exp --image_weight_override 0.02 --nn_weight 1000 --with_reg --cfg_override 100.0 --loss_dx_weight_override 0.005
 ```
 
-## Rendering
+#### Rendering
 ```
 python render_comp_video.py --skip_train --configs arguments/comp_butterfly_flower_zs.py --skip_test --model_path output_demo/date/butterflyflower_exp_date/ --iteration 3000
 ```
