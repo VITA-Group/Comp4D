@@ -30,10 +30,6 @@ As show in figure above, we introduce **Comp**ositional **4D** Scene Generation.
 
 </table > -->
 
-## Static Assets
-
-We release our pre-generated static assets in `data/` directory. During training we keep the static 3D Gaussians fixed and only optimize the deformation modules.
-
 ## Setup
 ```bash
 conda env create -f environment.yml
@@ -59,6 +55,37 @@ python train_comp.py --configs arguments/comp_butterfly_flower_zs.py -e butterfl
 #### Rendering
 ```
 python render_comp_video.py --skip_train --configs arguments/comp_butterfly_flower_zs.py --skip_test --model_path output_demo/date/butterflyflower_exp_date/ --iteration 3000
+```
+
+
+## Static Assets Preparation
+
+We release a set of pre-generated static assets in `data/` directory. During training we keep the static 3D Gaussians fixed and only optimize the deformation modules. We refered to the first two stages of [4D-fy](https://github.com/sherwinbahmani/4dfy) to generate the static 3D objects. Then we convert them to point clouds (in `data/`) which are used to initialize 3D Gaussians. Thanks the authors for sharing their awesome codebases!
+
+#### example case
+```
+
+# cd /path_to_4dfy/
+# seed=0
+# gpu=0
+
+## Stage 1
+# python launch.py --config configs/fourdfy_stage_1_low_vram.yaml --train --gpu $gpu exp_root_dir=output/ seed=$seed system.prompt_processor.prompt="a flower"
+
+## Stage 2
+# ckpt=output/fourdfy_stage_1_low_vram/a_flower@timestamp/ckpts/last.ckpt
+# python launch.py --config configs/fourdfy_stage_2_low_vram.yaml --train --gpu $gpu exp_root_dir=output/ seed=$seed system.prompt_processor.prompt="a flower" system.weights=$ckpt
+
+## Post-Process. Convert to mesh file.
+# python launch.py --config output/fourdfy_stage_2_low_vram/a_flower@timestamp/configs/parsed.yaml --export --gpu $gpu \
+#   resume=output/fourdfy_stage_2_low_vram/a_flower@timestamp/ckpts/last.ckpt system.exporter_type=mesh-exporter \
+#   system.exporter.context_type=cuda system.exporter.fmt=obj
+## saved to output/fourdfy_stage_2_low_vram/a_flower@timestamp/save/iterations-export/
+
+## Convert to point cloud.
+# cd /path_to_Comp4D/
+# python mesh2ply_8w.py /path_to_4dfy/output/fourdfy_stage_2_low_vram/a_flower@timestamp/save/iterations-export/model.obj data/a_flower.ply
+
 ```
 
 ## Citation
