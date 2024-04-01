@@ -7,6 +7,7 @@ Konstantinos N. Plataniotis, and Zhangyang Wang
 
 ## News
 
+- 2024.4.1:  Released code!
 - 2024.3.25:  Released on arxiv!
 
 ## Overview
@@ -23,8 +24,6 @@ We release our pre-generated static assets in `data/` directory. During training
 
 ## Custom Prompts
 
-## Code is coming soon!
-
 ## Training
 
 ## Testing
@@ -32,4 +31,3 @@ We release our pre-generated static assets in `data/` directory. During training
 ## Citation
 
 If you find this repository/work helpful in your research, please consider citing the paper and starring the repo ⭐.
-
