@@ -138,9 +138,9 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
         for ww in opt.obj_prompt:
             obj_prompts.append(zeroscope.get_text_embeds([ww]))
     else:
-        from VideoCrafter.scripts.evaluation.videocrafter2_utils import VideoCrafter2
+        from videocrafter.scripts.evaluation.videocrafter2_utils import VideoCrafter2
         from omegaconf import OmegaConf
-        vc_model_config = OmegaConf.load('VideoCrafter/configs/inference_t2v_512_v2.0.yaml').pop("model", OmegaConf.create())
+        vc_model_config = OmegaConf.load('videocrafter/configs/inference_t2v_512_v2.0.yaml').pop("model", OmegaConf.create())
         vc2 = VideoCrafter2(vc_model_config, ckpt_path='model.ckpt', weights_dtype=torch.float16, device='cuda')
         emb_zs = vc2.model.get_learned_conditioning([opt.prompt])
         neg_emb_zs = vc2.model.get_learned_conditioning(["text, watermark, copyright, blurry, nsfw"])
