@@ -23,30 +23,6 @@ def obj_to_ply(obj_filename, ply_filename):
     o3d.io.write_point_cloud(ply_filename, pcd)
     print(f"Point cloud saved to {ply_filename}")
 
-# Replace 'path_to_obj.obj' with the path to your .obj file and
-# 'output_path.ply' with the desired output path for the .ply file.
-# obj_filename = './outputs/magic123-coarse-sd/new.png-a_panda_dancing@20231022-112824/save/it10000-export/model.obj'
-# ply_filename = 'a.ply'
 if __name__ == '__main__':
     # obj_to_ply(obj_filename, ply_filename)
     fire.Fire(obj_to_ply)
-# def load_obj(filename):
-#     """
-#     Load the OBJ file and return vertices and faces.
-#     """
-#     vertices = []
-#     faces = []
-
-#     with open(filename, 'r') as file:
-#         for line in file:
-#             if line.startswith('v '):
-#                 vertices.append(list(map(float, line.strip().split()[1:4])))
-#             elif line.startswith('f'):
-#                 face = [int(i.split('/')[0]) for i in line.strip().split()[1:]]
-#                 faces.append(face)
-
-#     return np.array(vertices), np.array(faces)
-
-# res = load_obj(obj_filename)
-# print(res[0].shape)
-# print(res[1].shape)

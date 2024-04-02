@@ -77,7 +77,7 @@ class Scene:
             # 4 is not used
             # self.gaussians.load_3studio_ply(args.cloud_path, spatial_lr_scale=1, time_line=self.maxtime, step=1, position_scale=1/2.5, load_color=True) ## 4dfy
             for idx, _ in enumerate(self.gaussians):
-                _.load_3studio_ply(args.cloud_path[idx], spatial_lr_scale=1, time_line=self.maxtime, pts_num=int(2.5e4), position_scale=1/2.5, load_color=True) ## 4dfy
+                _.load_3studio_ply(args.cloud_path[idx], spatial_lr_scale=1, time_line=self.maxtime, pts_num=int(2e4), position_scale=1/2.5, load_color=True) ## 4dfy
             # self.gaussians.load_3studio_ply(cloud_path, spatial_lr_scale=1, time_line=self.maxtime, step=1, position_scale=1/2.5, load_color=True) ## 4dfy
             # self.gaussians.load_3studio_ply(cloud_path, spatial_lr_scale=1, time_line=self.maxtime, step=1, position_scale=1, load_color=True) ## imagedream
 

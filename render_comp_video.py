@@ -89,13 +89,6 @@ def query_trajectory(generate_coordinates, t0, fps, frame_num):
     translation_list = [generate_coordinates(t0 + i * fps) for i in range(frame_num)]
     return translation_list
 
-# def query_trajectory(t0, fps, frame_num):
-#     R = 0.5
-#     rot_speed = 1 / 3
-#     get_location = lambda t: np.array((R * np.sin(2 * np.pi * t * rot_speed), 0, R * np.cos(2 * np.pi * t * rot_speed)))
-#     translation_list = [get_location(t0 + i * fps) for i in range(frame_num)]
-#     return translation_list
-
 to8b = lambda x : (255*np.clip(x.cpu().numpy(),0,1)).astype(np.uint8)
 def render_set_fixcam(model_path, name, iteration, views, gaussians, pipeline, background,multiview_video, fname='video_rgb.mp4', func=None, scales=None, pre_scale=False, cam_idx=25):
     render_path = os.path.join(model_path, name, "ours_{}".format(iteration), "renders")
@@ -107,11 +100,7 @@ def render_set_fixcam(model_path, name, iteration, views, gaussians, pipeline, b
     gt_list = []
     render_list = []
     print(len(views))
-    
-    # for idx, view in enumerate(tqdm(views, desc="Rendering progress")):
-    # for idx in tqdm(range (100)):
-    # fnum = 100
-    # fnum = 12
+
     ####
     fnum = 48
     for idx in tqdm(range (fnum)):
