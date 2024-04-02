@@ -1,8 +1,6 @@
 # Comp4D: LLM-Guided Compositional 4D Scene Generation
 
-The official implementation of paper "Comp4D: LLM-Guided Compositional 4D Scene Generation".
-
-Dejia Xu*, Hanwen Liang*, Neel P. Bhatt, Hezhen Hu, Hanxue Liang, Konstantinos N. Plataniotis, and Zhangyang Wang
+The official implementation of paper "Comp4D: LLM-Guided Compositional 4D Scene Generation". Dejia Xu*, Hanwen Liang*, Neel P. Bhatt, Hezhen Hu, Hanxue Liang, Konstantinos N. Plataniotis, and Zhangyang Wang
 
 [[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
@@ -92,7 +90,6 @@ We release a set of pre-generated static assets in `data/` directory. During tra
 ## Convert to point cloud.
 # cd /path_to_Comp4D/
 # python mesh2ply_8w.py /path_to_4dfy/output/fourdfy_stage_2_low_vram/a_flower@timestamp/save/iterations-export/model.obj data/a_flower.ply
-
 ```
 
 
