@@ -2,6 +2,8 @@
 
 The official implementation of paper "Comp4D: LLM-Guided Compositional 4D Scene Generation".
 
+Dejia Xu*, Hanwen Liang*, Neel P. Bhatt, Hezhen Hu, Hanxue Liang, Konstantinos N. Plataniotis, and Zhangyang Wang
+
 [[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 ## News
@@ -73,18 +75,16 @@ We release a set of pre-generated static assets in `data/` directory. During tra
 ```
 
 # cd /path_to_4dfy/
-# seed=0
-# gpu=0
 
 ## Stage 1
-# python launch.py --config configs/fourdfy_stage_1_low_vram.yaml --train --gpu $gpu exp_root_dir=output/ seed=$seed system.prompt_processor.prompt="a flower"
+# python launch.py --config configs/fourdfy_stage_1_low_vram.yaml --train --gpu 0 exp_root_dir=output/ seed=0 system.prompt_processor.prompt="a flower"
 
 ## Stage 2
 # ckpt=output/fourdfy_stage_1_low_vram/a_flower@timestamp/ckpts/last.ckpt
-# python launch.py --config configs/fourdfy_stage_2_low_vram.yaml --train --gpu $gpu exp_root_dir=output/ seed=$seed system.prompt_processor.prompt="a flower" system.weights=$ckpt
+# python launch.py --config configs/fourdfy_stage_2_low_vram.yaml --train --gpu 0 exp_root_dir=output/ seed=0 system.prompt_processor.prompt="a flower" system.weights=$ckpt
 
 ## Post-Process. Convert to mesh file.
-# python launch.py --config output/fourdfy_stage_2_low_vram/a_flower@timestamp/configs/parsed.yaml --export --gpu $gpu \
+# python launch.py --config output/fourdfy_stage_2_low_vram/a_flower@timestamp/configs/parsed.yaml --export --gpu 0 \
 #   resume=output/fourdfy_stage_2_low_vram/a_flower@timestamp/ckpts/last.ckpt system.exporter_type=mesh-exporter \
 #   system.exporter.context_type=cuda system.exporter.fmt=obj
 ## saved to output/fourdfy_stage_2_low_vram/a_flower@timestamp/save/iterations-export/
