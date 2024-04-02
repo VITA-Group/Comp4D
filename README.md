@@ -60,9 +60,9 @@ python render_comp_video.py --skip_train --configs arguments/comp_butterfly_flow
 
 ## Static Assets Preparation
 
-We release a set of pre-generated static assets in `data/` directory. During training we keep the static 3D Gaussians fixed and only optimize the deformation modules. We refered to the first two stages of [4D-fy](https://github.com/sherwinbahmani/4dfy) to generate the static 3D objects. Then we convert them to point clouds (in `data/`) which are used to initialize 3D Gaussians. Thanks the authors for sharing their awesome codebases!
+We release a set of pre-generated static assets in `data/` directory. During training we keep the static 3D Gaussians fixed and only optimize the deformation modules. We refered to the first two stages of [4D-fy](https://github.com/sherwinbahmani/4dfy) to generate the static 3D objects. Then we convert them to point clouds (in `data/`) which are used to initialize 3D Gaussians. Thanks the authors for sharing their awesome work!
 
-#### example case
+#### Example case
 ```
 
 # cd /path_to_4dfy/
@@ -87,6 +87,18 @@ We release a set of pre-generated static assets in `data/` directory. During tra
 # python mesh2ply_8w.py /path_to_4dfy/output/fourdfy_stage_2_low_vram/a_flower@timestamp/save/iterations-export/model.obj data/a_flower.ply
 
 ```
+
+
+## Acknowledgement
+
+This work is built on many amazing research works and open-source projects. Thanks to all the authors for sharing!
+
+- https://github.com/sherwinbahmani/4dfy
+- https://github.com/hustvl/4DGaussians
+- https://github.com/dreamgaussian/dreamgaussian
+- https://github.com/graphdeco-inria/gaussian-splatting
+- https://github.com/graphdeco-inria/diff-gaussian-rasterization
+- https://github.com/threestudio-project/threestudio
 
 ## Citation
 
