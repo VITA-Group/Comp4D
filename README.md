@@ -1,7 +1,6 @@
 # Comp4D: LLM-Guided Compositional 4D Scene Generation
 
-Authors: Dejia Xu, Hanwen Liang, Neel P. Bhatt, Hezhen Hu, Hanxue Liang,
-Konstantinos N. Plataniotis, and Zhangyang Wang
+The official implementation of "Comp4D: LLM-Guided Compositional 4D Scene Generation".
 
 [[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
@@ -49,8 +48,16 @@ pip install ./simple-knn
 
 #### Compositional Scene training
 ```
-python train_comp.py --configs arguments/comp_butterfly_flower_zs.py -e butterflyflower_exp --image_weight_override 0.02 --nn_weight 1000 --with_reg --cfg_override 100.0 --loss_dx_weight_override 0.005
+python train_comp.py --configs arguments/comp_butterfly_flower_zs.py -e butterflyflower_exp --cfg_override 100.0 --image_weight_override 0.02 --nn_weight 1000 --with_reg  --loss_dx_weight_override 0.005
 ```
+--- 
+We provide a quick overview of some important arguments:  
+- `--configs`: Configuration of scene traning including prompt, object identity, object scales, trajectory.
+- `--image_weight`: Weight of sds loss from image-based diffusion model.
+- `--nn_weight`: Weight of k-nn based rigidity loss.
+- `--loss_dx_weight`: Weight of regularization acceleration loss.
+- `-e`:  Experimental path.
+You can also use [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter) in replace of Zeroscope for video-based diffusion model.
 
 #### Rendering
 ```
