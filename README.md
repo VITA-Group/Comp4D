@@ -53,11 +53,11 @@ python train_comp.py --configs arguments/comp_butterfly_flower_zs.py --expname b
 --- 
 We provide a quick overview of some important arguments:  
 - `--expname`:  Experimental path.
-- `--configs`: Configuration of scene traning including prompt, object identity, object scales, trajectory.
+- `--configs`: Configuration of scene traning including prompt, object identity, object scales, trajectory. You can also use [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter) in replace of Zeroscope for video-based diffusion model.
 - `--image_weight`: Weight of sds loss from image-based diffusion model.
 - `--nn_weight`: Weight of k-nn based rigidity loss.
 - `--loss_dx_weight`: Weight of regularization acceleration loss.
-You can also use [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter) in replace of Zeroscope for video-based diffusion model.
+
 
 #### Rendering
 ```
