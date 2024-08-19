@@ -1,11 +1,11 @@
-# Comp4D: LLM-Guided Compositional 4D Scene Generation
+# Comp4D: Compositional 4D Scene Generation
 
-The official implementation of paper "Comp4D: LLM-Guided Compositional 4D Scene Generation".
+The official implementation of paper "Comp4D: Compositional 4D Scene Generation".
 
 [[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 ## News
-
+- 2024.8.19:  Paper revised and supporting more objects.
 - 2024.4.1:  Released code!
 - 2024.3.25:  Released on arxiv!
 
@@ -13,7 +13,7 @@ The official implementation of paper "Comp4D: LLM-Guided Compositional 4D Scene 
 
 ![overview](docs/static/media/task.29476c66b38120ba3c46.jpg)
 
-As show in figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous works concentrate on object-centric 4D objects with limited movement. In comparison, our work extends the boundaries to the demanding task of compositional 4D scene generation. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
+As shown in the figure above, we introduce **Comp**ositional **4D** Scene Generation. Previous works concentrate on object-centric 4D objects with limited movement. In comparison, our work extends the boundaries to the demanding task of compositional 4D scene generation. We integrate GPT-4 to decompose the scene and design proper trajectories, resulting in larger-scale movements and more realistic object interactions.
 
 <!-- ## Representative Results
 
@@ -53,9 +53,9 @@ python train_comp.py --configs arguments/comp_butterfly_flower_zs.py --expname b
 --- 
 We provide a quick overview of some important arguments:  
 - `--expname`:  Experimental path.
-- `--configs`: Configuration of scene traning including prompt, object identity, object scales, trajectory. You can also use [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter) in replace of Zeroscope for video-based diffusion model.
+- `--configs`: Configuration of scene training including prompt, object identity, object scales, and trajectory. You can also use [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter) in replace of Zeroscope for video-based diffusion model.
 - `--image_weight`: Weight of sds loss from image-based diffusion model.
-- `--nn_weight`: Weight of k-nn based rigidity loss.
+- `--nn_weight`: Weight of knn based rigidity loss.
 - `--loss_dx_weight`: Weight of regularization acceleration loss.
 
 
@@ -67,7 +67,7 @@ python render_comp_video.py --skip_train --configs arguments/comp_butterfly_flow
 
 ## Static Assets Preparation
 
-We release a set of pre-generated static assets in `data/` directory. During training we keep the static 3D Gaussians fixed and only optimize the deformation modules. We refered to the first two stages of [4D-fy](https://github.com/sherwinbahmani/4dfy) to generate the static 3D objects. Then we convert them to point clouds (in `data/`) which are used to initialize 3D Gaussians. Thanks the authors for sharing their awesome work!
+We release a set of pre-generated static assets in `data/` directory. During training, we keep the static 3D Gaussians fixed and only optimize the deformation modules. We referred to the first two stages of [4D-fy](https://github.com/sherwinbahmani/4dfy) to generate the static 3D objects. Then we convert them to point clouds (in `data/`) which are used to initialize 3D Gaussians. Thanks to the authors for sharing their awesome work!
 
 #### Example case
 ```
