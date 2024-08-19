@@ -5,7 +5,7 @@ The official implementation of paper "Comp4D: Compositional 4D Scene Generation"
 [[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 ## News
-- 2024.8.19:  Paper revised and supporting more objects.
+- 2024.8.19:  Revised to support more objects.
 - 2024.4.1:  Released code!
 - 2024.3.25:  Released on arxiv!
 
