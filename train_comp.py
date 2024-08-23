@@ -3,7 +3,6 @@ import random
 import os
 import torch
 
-from random import randint
 from utils.loss_utils import l1_loss, ssim, l2_loss, lpips_loss
 from gaussian_renderer.comp_renderer import render as render_comp
 from gaussian_renderer import render as render_single
@@ -11,7 +10,6 @@ import sys
 from scene.comp_scene import Scene
 from scene.gaussian_model_nogrid import GaussianModel_nogrid as GaussianModel
 from utils.general_utils import safe_state
-import uuid
 from tqdm import tqdm
 from utils.image_utils import psnr
 from argparse import ArgumentParser, Namespace
@@ -33,10 +31,6 @@ try:
 except ImportError:
     TENSORBOARD_FOUND = False
 
-# from guidance.zero123_utils import Zero123
-# from guidance.zeroscope_utils_hifa import ZeroScope
-# from guidance.zeroscope_utils import ZeroScope
-# from guidance.mvdream_utils import MVDream
 from guidance.sd_utils import StableDiffusion
 
 from PIL import Image
@@ -103,20 +97,6 @@ def get_rotation(prev_pos, next_pos):
     # canonical = np.array([0, 0, 1])
     return find_rotation_matrix(canonical, new_vec)
 
-# Constants
-g = 9.81  # acceleration due to gravity, m/s^2
-
-# Initial horizontal velocity calculation
-vx = 2  # m/s, to cover 4 meters in 2 seconds
-
-# To calculate the initial vertical velocity, we use the equation of motion at the peak (1 second into the jump)
-# At the peak, vertical velocity (v) = 0, acceleration (a) = -g, time (t) = 1 sec
-# We rearrange the equation v = u + at to find u: u = v - at
-vy_initial = 0 - (-g) * 1  # Initial vertical velocity
-
-    # return np.array((x, z, y))
-    # return np.array((x, y, z))
-
 def query_trajectory(generate_coordinates, t0, fps, frame_num):
     # get_location = lambda t: np.array((R * np.sin(2 * np.pi * t * rot_speed), 0, R * np.cos(2 * np.pi * t * rot_speed)))
     translation_list = [generate_coordinates(t0 + i * fps) for i in range(frame_num)]
@@ -138,9 +118,9 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
         for ww in opt.obj_prompt:
             obj_prompts.append(zeroscope.get_text_embeds([ww]))
     else:
-        from VideoCrafter.scripts.evaluation.videocrafter2_utils import VideoCrafter2
+        from videocrafter.scripts.evaluation.videocrafter2_utils import VideoCrafter2
         from omegaconf import OmegaConf
-        vc_model_config = OmegaConf.load('VideoCrafter/configs/inference_t2v_512_v2.0.yaml').pop("model", OmegaConf.create())
+        vc_model_config = OmegaConf.load('videocrafter/configs/inference_t2v_512_v2.0.yaml').pop("model", OmegaConf.create())
         vc2 = VideoCrafter2(vc_model_config, ckpt_path='model.ckpt', weights_dtype=torch.float16, device='cuda')
         emb_zs = vc2.model.get_learned_conditioning([opt.prompt])
         neg_emb_zs = vc2.model.get_learned_conditioning(["text, watermark, copyright, blurry, nsfw"])
@@ -205,13 +185,13 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
                 frame_num = viewpoint_stack.pose0_num
 
                 loader = iter(viewpoint_stack_loader)
-            if True:
-                try:
-                    data = next(loader)
-                except StopIteration:
-                    print("reset dataloader")
-                    batch_size = 1
-                    loader = iter(viewpoint_stack_loader)
+
+            try:
+                data = next(loader)
+            except StopIteration:
+                print("reset dataloader")
+                batch_size = 1
+                loader = iter(viewpoint_stack_loader)
             if (iteration - 1) == debug_from:
                 pipe.debug = True
             images = []
@@ -251,7 +231,7 @@ def scene_reconstruction(dataset, opt, hyper, pipe, testing_iterations, saving_i
             radii = torch.cat(radii_list,0).max(dim=0).values
             visibility_filter = torch.cat(visibility_filter_list).any(dim=0)
             image_tensor = torch.cat(images,0)
-            # print('output', image_tensor.shape) # B, C, H, W
+
             if len(out_pts):
                 out_pts = torch.stack(out_pts, 0)
 
