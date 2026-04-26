@@ -2,7 +2,7 @@
 
 The official implementation of paper "Comp4D: Compositional 4D Scene Generation".
 
-[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=9q8SV1Xf_Xw) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://github.com/VITA-Group/Comp4D/blob/main/assets/Comp4D.pdf) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
+[[Project Page]](https://vita-group.github.io/Comp4D/) | [[Video (narrated)]](https://www.youtube.com/watch?v=NmSW2P7ZPPY) | [[Video (results)]](https://www.youtube.com/watch?v=gXVoPTGb734) | [[Paper]](https://openaccess.thecvf.com/content/WACV2026/html/Liang_Comp4D_Compositional_4D_Scene_Generation_WACV_2026_paper.html) | [[Arxiv]](https://arxiv.org/abs/2403.16993)
 
 ## News
 - 2024.8.19:  Revised to support more objects.
