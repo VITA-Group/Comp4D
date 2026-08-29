@@ -108,10 +108,12 @@ This work is built on many amazing research works and open-source projects. Than
 
 If you find this repository/work helpful in your research, please consider citing the paper and starring the repo ⭐.
 ```
-@article{xu2024comp4d,
-  title={Comp4D: LLM-Guided Compositional 4D Scene Generation},
-  author={Xu, Dejia and Liang, Hanwen and Bhatt, Neel P and Hu, Hezhen and Liang, Hanxue and Plataniotis, Konstantinos N and Wang, Zhangyang},
-  journal={arXiv preprint arXiv:2403.16993},
-  year={2024}
+@inproceedings{liang2026comp4d,
+  title={Comp4D: Compositional 4D Scene Generation},
+  author={Liang, Hanwen and Xu, Dejia and Bhatt, Neel P and Hu, Hezhen and Liang, Hanxue and Plataniotis, Konstantinos N},
+  booktitle={2026 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  pages={3567--3577},
+  year={2026},
+  organization={IEEE}
 }
 ```
